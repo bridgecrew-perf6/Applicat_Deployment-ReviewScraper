@@ -17,7 +17,7 @@ def index():
     if request.method == 'POST':
         try:
             searchString = request.form['content'].replace(" ","")
-            flipkart_url = "https://www.flipkart.com/search?q=" + searchString
+            flipkart_url = "https://www.flipkart.com/search?q=" + "iphone7"
             uClient = uReq(flipkart_url)
             flipkartPage = uClient.read()
             uClient.close()
@@ -79,5 +79,5 @@ def index():
         return render_template('index.html')
 
 if __name__ == "__main__":
-    #app.run(host='127.0.0.1', port=8001, debug=True)
-	app.run(debug=True)
+    app.run(host='127.0.0.1', port=8001, debug=True)
+	#app.run(debug=True)
